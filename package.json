@@ -1,0 +1,23 @@
+{
+  "name": "biologme",
+  "version": "1.0.0",
+  "description": "A Bio Logging App for Mental Wellbeing",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CoraNiall/BioLogMe.git"
+  },
+  "author": "Caroline Reiss",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CoraNiall/BioLogMe/issues"
+  },
+  "homepage": "https://github.com/CoraNiall/BioLogMe#readme",
+  "dependencies": {
+    "dotenv": "^9.0.1",
+    "express": "^4.17.1"
+  }
+}
