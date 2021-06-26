@@ -3,6 +3,7 @@ const express = require('express')
 const app = express()
 const PORT = process.env.PORT || 8080
 const mongoose = require('mongoose');
+const User = require('../db/models/user');
 
 app.use('/static', express.static('public'))
 
@@ -44,4 +45,7 @@ db.once('open', function() {
   app.listen(PORT, () => {
     console.log(`Example app listening at http://localhost:${PORT}`)
   })
+  // const caroline = new User({name: 'caroline', userName: 'carolina', password: 'pa$$word'});
+  // caroline.save();
 });
+
