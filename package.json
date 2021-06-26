@@ -19,6 +19,8 @@
   "homepage": "https://github.com/CoraNiall/BioLogMe#readme",
   "dependencies": {
     "dotenv": "^9.0.1",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "^5.12.14",
+    "react-router-dom": "^5.2.0"
   }
 }
