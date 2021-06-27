@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default class LoginForm extends React.Component {
-    render() {
+function LoginForm() {
       return (
-        <form>
+        <div className='container'>
+          <form>
           <h1>Please log in</h1>
           <p>Username:</p>
           <input
@@ -14,6 +14,8 @@ export default class LoginForm extends React.Component {
             type="text"
           />
         </form>
+        </div>
       );
     }
-  };
+  
+export default LoginForm;
