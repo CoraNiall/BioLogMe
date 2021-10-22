@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import UserDashboard from './components/userDashboard';
+import UserProfile from './components/userProfileForm';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route path='/'>
+            <UserProfile />
             <UserDashboard />
           </Route>
         </Switch>
