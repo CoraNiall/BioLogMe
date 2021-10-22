@@ -1,42 +1,21 @@
+import React from 'react';
 import './App.css';
-import RegistrationForm from './components/registrationForm';
-import LoginForm from './components/loginForm';
 import UserDashboard from './components/userDashboard';
+import SleepLog from './components/sleepLog';
 
-import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
-import Button from '@material-ui/core/Button';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="Main-wrapper">
+    <div className='Main-wrapper'>
       <BrowserRouter>
         <Switch>
-          <Route path='/login'>
-          <LoginForm />
-          </Route>
-          <Route path='/register'>
-        <RegistrationForm />
-        </Route>
-        <Route path='/dashboard'>
-        <UserDashboard />
-        </Route>
-        <Route path='/'>
-          <header className="Main-wrapper-header">
-        <h2>Welcome to BioLog Me </h2>
-        <Button 
-        variant='contained' 
-        color='primary' 
-        component={Link} 
-        to='/login'>Log In</Button>
-        <Button 
-        variant='contained' 
-        color='primary' 
-        component={Link} 
-        to='/register'>Register</Button>
-        </header>
+          <Route path='/'>
+            <UserDashboard />
+            <SleepLog />
           </Route>
         </Switch>
-        </BrowserRouter>
+      </BrowserRouter>
     </div>
   );
 }
