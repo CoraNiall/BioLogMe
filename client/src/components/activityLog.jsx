@@ -1,19 +1,20 @@
 import React from 'react';
+import Form from 'react-bootstrap/Form';
 
 export default function ActivityLog() {
   return (
-    <form action='' method='post' className='activity-form'>
+    <Form.Group action='' method='post' className='activity-form'>
       <div className='activity-form'>
-        <label for='name'>Enter your name: </label>
-        <input type='text' name='name' id='name' required />
+        <Form.Label for='name'>Enter your name: </Form.Label>
+        <Form.Control type='text' name='name' id='name' required />
       </div>
       <div className='activity-form'>
-        <label for='email'>Enter your email: </label>
-        <input type='email' name='email' id='email' required />
+        <Form.Label for='email'>Enter your email: </Form.Label>
+        <Form.Control type='email' name='email' id='email' required />
       </div>
       <div className='activity-form'>
-        <input type='submit' value='Log your activity!' />
+        <Form.Control type='submit' value='Log your activity!' />
       </div>
-    </form>
+    </Form.Group>
   );
 }

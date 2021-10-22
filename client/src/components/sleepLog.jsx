@@ -1,21 +1,26 @@
 import React from 'react';
+import Form from 'react-bootstrap/Form';
 import './../styles/sleepLog.css';
-import Slider from './slider';
 
 export default function SleepLog() {
   return (
-    <form action='' method='post' className='sleep-form'>
+    <Form.Group action='' method='post' className='sleep-form'>
       <div className='sleep-form'>
-        <label>Sleep start: </label>
-        <input type='time' name='sleep-start' id='sleep-start' required />
+        <Form.Label>Sleep start: </Form.Label>
+        <Form.Control
+          type='time'
+          name='sleep-start'
+          id='sleep-start'
+          required
+        />
       </div>
       <div className='sleep-form'>
-        <label>Sleep end: </label>
-        <input type='time' name='sleep-end' id='sleep-end' required />
+        <Form.Label>Sleep end: </Form.Label>
+        <Form.Control type='time' name='sleep-end' id='sleep-end' required />
       </div>
       <div className='sleep-form'>
-        <label>Time spent awake: </label>
-        <input
+        <Form.Label>Time spent awake: </Form.Label>
+        <Form.Control
           type='number'
           name='time-awake'
           id='time-awake'
@@ -24,10 +29,9 @@ export default function SleepLog() {
           step='0.5'
         />
       </div>
-      <Slider />
       <div className='sleep-form'>
-        <input type='submit' value='Log your sleep!' />
+        <Form.Control type='submit' value='Log your sleep!' />
       </div>
-    </form>
+    </Form.Group>
   );
 }

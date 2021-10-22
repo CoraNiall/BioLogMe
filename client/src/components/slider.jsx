@@ -1,30 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Form from 'react-bootstrap/Form';
 
-// TODO: this slider is broken and needs fixing
 export default function Slider() {
-  const handleSlider = () => {
-    let slider = document.getElementById('mood-slider');
-    let output = document.getElementById('mood-output');
-    output.innerHTML = slider.value;
+  let defaultValue = 0;
 
-    slider.oninput = function () {
-      output.innerHTML = this.value;
-    };
+  const [sliderValue, setValue] = useState(defaultValue);
+
+  const handleSlider = e => {
+    setValue(e.target.value);
   };
 
   return (
-    <div className='mood-slider' id='mood-slider'>
-      <h3>Mood score:</h3>
-      <p id='mood-output'></p>
-      <input
-        type='range'
-        min='1'
-        max='10'
-        step='1'
-        value='1'
-        className='slider'
-        onChange={handleSlider}
-      />
-    </div>
+    <>
+      <Form.Group id='mood-slider'>
+        <Form.Label>Mood score:</Form.Label>
+        <Form.Range
+          id='range'
+          min='0'
+          max='10'
+          step='1'
+          defaultValue={sliderValue}
+          onClick={handleSlider}
+        />
+        <br />
+        <Form.Label>Value: {sliderValue}</Form.Label>
+      </Form.Group>
+    </>
   );
 }
