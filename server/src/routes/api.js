@@ -19,7 +19,7 @@ router.post('/profile-page', (req, res) => {
   });
 });
 
-router.get('/view-charts', (req, res) => {
+router.get('/home', (req, res) => {
   res.send({
     message:
       'This is where the user will eventually view their data visualisations',
