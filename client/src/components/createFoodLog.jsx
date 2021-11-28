@@ -24,6 +24,12 @@ export default function CreateFoodLog() {
         <Button variant='danger' className='food-button' htmlFor='red-list'>
           Add Red List Item
         </Button>
+        <Button
+          variant='primary'
+          className='edit-food-button'
+          id='edit-food-button'>
+          Edit Food Lists
+        </Button>
       </Form.Group>
     </div>
   );

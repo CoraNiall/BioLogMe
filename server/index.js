@@ -1,8 +1,11 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const PORT = process.env.PORT || 8080;
+const mongoclient = require('../db/conn');
 const routes = require('./src/routes/api');
+
+const PORT = process.env.PORT || 8080;
 
 app.use(cors());
 app.use(express.json());

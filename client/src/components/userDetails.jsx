@@ -10,10 +10,10 @@ export default function UserDetails() {
       <Form.Group className='mb-3'>
         <Form.Label htmlFor='name'>Enter your name: </Form.Label>
         <Form.Control type='text' name='name' id='name' required />
-      </Form.Group>
-      <Form.Group className='mb-3'>
         <Form.Label htmlFor='email'>Enter your email: </Form.Label>
-        <Form.Control type='email' name='email' id='email' required />
+        <Form.Control type='text' name='email' id='email' required />
+        <Form.Label htmlFor='password'>Enter a password: </Form.Label>
+        <Form.Control type='text' name='password' id='password' required />
         <Button className='user-details-button' variant='primary'>
           Submit
         </Button>
