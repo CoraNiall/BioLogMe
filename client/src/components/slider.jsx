@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/esm/Button';
+import './../styles/log.css';
 
 export default function Slider() {
   let defaultValue = 0;
@@ -11,7 +13,7 @@ export default function Slider() {
   };
 
   return (
-    <>
+    <div className='container-sm'>
       <Form.Group id='mood-slider'>
         <Form.Label>Mood score:</Form.Label>
         <Form.Range
@@ -24,7 +26,10 @@ export default function Slider() {
         />
         <br />
         <Form.Label>Value: {sliderValue}</Form.Label>
+        <Button variant='primary' className='mood-button' id='add-mood-button'>
+          Log Mood Score
+        </Button>
       </Form.Group>
-    </>
+    </div>
   );
 }

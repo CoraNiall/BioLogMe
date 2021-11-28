@@ -1,11 +1,13 @@
 import React from 'react';
 import Form from 'react-bootstrap/Form';
-import './../styles/sleepLog.css';
+import Button from 'react-bootstrap/esm/Button';
+import './../styles/log.css';
 
 export default function SleepLog() {
   return (
-    <Form.Group action='' method='post' className='sleep-form'>
-      <div className='sleep-form'>
+    <div className='container-sm'>
+      <h1>Add your sleep</h1>
+      <Form.Group action='' method='post' className='mb-3'>
         <Form.Label>Sleep start: </Form.Label>
         <Form.Control
           type='time'
@@ -13,12 +15,8 @@ export default function SleepLog() {
           id='sleep-start'
           required
         />
-      </div>
-      <div className='sleep-form'>
         <Form.Label>Sleep end: </Form.Label>
         <Form.Control type='time' name='sleep-end' id='sleep-end' required />
-      </div>
-      <div className='sleep-form'>
         <Form.Label>Time spent awake: </Form.Label>
         <Form.Control
           type='number'
@@ -28,10 +26,13 @@ export default function SleepLog() {
           max='8'
           step='0.5'
         />
-      </div>
-      <div className='sleep-form'>
-        <Form.Control type='submit' value='Log your sleep!' />
-      </div>
-    </Form.Group>
+        <Button
+          variant='primary'
+          className='sleep-button'
+          id='add-sleep-button'>
+          Log Sleep
+        </Button>
+      </Form.Group>
+    </div>
   );
 }

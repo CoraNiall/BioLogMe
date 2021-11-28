@@ -2,7 +2,7 @@ import React from 'react';
 import Button from 'react-bootstrap/esm/Button';
 import Form from 'react-bootstrap/Form';
 
-import '../styles/createActivityLog.css';
+import '../styles/createLog.css';
 
 export default function CreateActivityLog() {
   return (

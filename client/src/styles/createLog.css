@@ -3,6 +3,8 @@
   width: 50%;
 }
 
-.activity-button {
+.food-button,
+.activity-button,
+.symptom-button {
   margin: 1em;
 }
