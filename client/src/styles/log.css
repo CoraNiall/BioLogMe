@@ -3,7 +3,11 @@
   width: 50%;
 }
 
-button {
+button,
+.user-details-btn,
+.sleep-input,
+.food-input,
+.mood-input {
   margin: 1em;
 }
 

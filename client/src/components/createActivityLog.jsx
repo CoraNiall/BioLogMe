@@ -1,33 +1,31 @@
 import React from 'react';
-import Button from 'react-bootstrap/esm/Button';
-import Form from 'react-bootstrap/Form';
 
 import '../styles/createLog.css';
 
 export default function CreateActivityLog() {
   return (
-    <div className='container-sm'>
+    <div className='container-sm col-md-8'>
       <h1>Create your activity list</h1>
-      <Form.Group action='' method='post' className='mb-3'>
-        <Form.Control
+      <form action='' method='post' className='mb-3'>
+        <input
           type='text'
           name='add-activity'
+          className='form-control'
           id='add-activity'
           placeholder='Type activity here'
         />
-        <Button
+        <input
+          className='btn btn-primary activity-input'
+          id='add-activity-input'
+          value='Add Activity'
+        />
+        <input
           variant='primary'
-          className='activity-button'
-          id='add-activity-button'>
-          Add Activity
-        </Button>
-        <Button
-          variant='primary'
-          className='activity-button'
-          id='add-activity-button'>
-          View Activity List
-        </Button>
-      </Form.Group>
+          className='btn btn-primary activity-input'
+          id='add-activity-input'
+          value='View Activity List'
+        />
+      </form>
     </div>
   );
 }

@@ -1,19 +1,27 @@
 import React from 'react';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/esm/Button';
+
+import './../styles/log.css';
 
 export default function SymptomLog() {
   return (
-    <div className='container-sm'>
+    <div className='container-sm col-md-8'>
       <h1>Log your symptom</h1>
-      <Form.Group action='' method='post' className='mb-3'>
-        <Button
-          variant='primary'
-          className='symptom-button'
-          id='add-symptom-button'>
-          Log Symptom
-        </Button>
-      </Form.Group>
+      <form action='' method='post' className='mb-3'>
+        <label className='form-label' htmlFor='symptoms'>
+          Symptom:
+        </label>
+        <input
+          type='text'
+          name='symptom'
+          id='symptom'
+          className='form-control'
+        />
+        <input
+          className='btn btn-primary symptom-input'
+          id='add-symptom-input'
+          value='Log Symptom'
+        />
+      </form>
     </div>
   );
 }

@@ -3,8 +3,10 @@
   width: 50%;
 }
 
-.food-button,
-.activity-button,
-.symptom-button {
+.food-input,
+.activity-input,
+.symptom-input,
+.food-input,
+.edit-food-input {
   margin: 1em;
 }

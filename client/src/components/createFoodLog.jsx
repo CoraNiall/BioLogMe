@@ -1,36 +1,43 @@
 import React from 'react';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
 
 import '../styles/createLog.css';
 
 export default function CreateFoodLog() {
   return (
-    <div className='container-sm'>
+    <div className='container-sm col-md-8'>
       <h1>Create your food list</h1>
-      <Form.Group action='' method='post' className='mb-3'>
-        <Form.Control
+      <form action='' method='post' className='mb-3'>
+        <input
           type='text'
           name='food-list'
           id='food-list'
+          className='form-control'
           placeholder='Start typing food'
         />
-        <Button variant='success' className='food-button' htmlFor='green-list'>
-          Add Green List Item
-        </Button>
-        <Button variant='warning' className='food-button' htmlFor='amber-list'>
-          Add Amber List Item
-        </Button>
-        <Button variant='danger' className='food-button' htmlFor='red-list'>
-          Add Red List Item
-        </Button>
-        <Button
-          variant='primary'
-          className='edit-food-button'
-          id='edit-food-button'>
-          Edit Food Lists
-        </Button>
-      </Form.Group>
+        <input
+          type='submit'
+          className='btn btn-success food-input'
+          htmlFor='green-list'
+          value='Add Green List Item'
+        />
+        <input
+          type='submit'
+          className='btn btn-warning food-input'
+          htmlFor='amber-list'
+          value='Add Amber List Item'
+        />
+        <input
+          type='submit'
+          className='btn btn-danger food-input'
+          htmlFor='red-list'
+          value='Add Red List Item'
+        />
+        <input
+          className='btn btn-primary edit-food-input'
+          id='edit-food-input'
+          value='Edit Food Lists'
+        />
+      </form>
     </div>
   );
 }

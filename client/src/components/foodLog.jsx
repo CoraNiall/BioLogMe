@@ -1,40 +1,58 @@
 import React from 'react';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/esm/Button';
+
 import './../styles/log.css';
 
 export default function FoodLog() {
   return (
-    <div className='container-sm'>
+    <div className='container-sm col-md-8'>
       <h1>Add your food</h1>
-      <Form.Group action='' method='post' className='mb-3'>
+      <form action='' method='post' className='mb-3'>
         <div className='mb-3'>
-          <Form.Label className='form-label' htmlFor='breakfast'>
+          <label className='form-label' htmlFor='breakfast'>
             Breakfast:
-          </Form.Label>
-          <Form.Control type='text' name='breakfast' id='breakfast' />
+          </label>
+          <input
+            type='text'
+            name='breakfast'
+            id='breakfast'
+            className='form-control'
+          />
         </div>
         <div className='mb-3'>
-          <Form.Label htmlFor='lunch'>Lunch: </Form.Label>
-          <Form.Control type='lunch' name='lunch' id='lunch' />
+          <label htmlFor='lunch'>Lunch: </label>
+          <input
+            type='lunch'
+            name='lunch'
+            id='lunch'
+            className='form-control'
+          />
         </div>
         <div className='mb-3'>
-          <Form.Label htmlFor='dinner'>Dinner: </Form.Label>
-          <Form.Control type='dinner' name='dinner' id='dinner' />
+          <label htmlFor='dinner'>Dinner: </label>
+          <input
+            type='dinner'
+            name='dinner'
+            id='dinner'
+            className='form-control'
+          />
         </div>
         <div className='food-form'>
-          <Form.Label htmlFor='snacks'>Snacks: </Form.Label>
-          <Form.Control type='snacks' name='snacks' id='snacks' />
+          <label htmlFor='snacks'>Snacks: </label>
+          <input
+            type='snacks'
+            name='snacks'
+            id='snacks'
+            className='form-control'
+          />
         </div>
         <div className='food-form'>
-          <Button
-            variant='primary'
-            className='food-button'
-            id='add-food-button'>
-            Log Food
-          </Button>
+          <input
+            className='btn btn-primary food-input'
+            id='add-food-input'
+            value='Log Food'
+          />
         </div>
-      </Form.Group>
+      </form>
     </div>
   );
 }

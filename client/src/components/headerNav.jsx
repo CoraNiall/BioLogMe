@@ -1,22 +1,40 @@
 import React from 'react';
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
-import Container from 'react-bootstrap/Container';
 
-export default function HeaderNav() {
+import './../styles/nav.css';
+
+export default function Headerdiv() {
   return (
-    <Navbar bg='light' expand='lg'>
-      <Container>
-        <Navbar.Toggle aria-controls='basic-navbar-nav' />
-        <Navbar.Collapse id='basic-navbar-nav'>
-          <Nav className='me-auto'>
-            <Nav.Link href='/home'>Home</Nav.Link>
-            <Nav.Link href='/user-dashboard'>Dashboard</Nav.Link>
-            <Nav.Link href='/profile-page'>Profile</Nav.Link>
-            <Nav.Link href='/login'>Log Out</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+    <nav
+      className='navbar navbar-expand-lg navbar-light bg-light justify-content-end'
+      role='navigation'>
+      <ul className='nav nav-pills nav-fill'>
+        <div className='me-auto'>
+          <li className='nav-item'>
+            {' '}
+            <a href='/home' className='nav-link'>
+              Home
+            </a>
+          </li>
+          <li className='nav-item'>
+            {' '}
+            <a href='/user-dashboard' className='nav-link'>
+              Dashboard
+            </a>
+          </li>
+          <li className='nav-item'>
+            {' '}
+            <a href='/profile-page' className='nav-link'>
+              Profile
+            </a>
+          </li>
+          <li className='nav-item'>
+            {' '}
+            <a href='/login' className='nav-link'>
+              Log Out
+            </a>
+          </li>
+        </div>
+      </ul>
+    </nav>
   );
 }
