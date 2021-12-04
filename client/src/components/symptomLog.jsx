@@ -16,11 +16,11 @@ export default function SymptomLog() {
           id='symptom'
           className='form-control'
         />
-        <input
+        <button
           className='btn btn-primary symptom-input'
-          id='add-symptom-input'
-          value='Log Symptom'
-        />
+          id='add-symptom-input'>
+          Log Symptom
+        </button>
       </form>
     </div>
   );

@@ -14,29 +14,29 @@ export default function CreateFoodLog() {
           className='form-control'
           placeholder='Start typing food'
         />
-        <input
+        <button
           type='submit'
           className='btn btn-success food-input'
-          htmlFor='green-list'
-          value='Add Green List Item'
-        />
-        <input
+          htmlFor='green-list'>
+          Add Green List Item
+        </button>
+        <button
           type='submit'
           className='btn btn-warning food-input'
-          htmlFor='amber-list'
-          value='Add Amber List Item'
-        />
-        <input
+          htmlFor='amber-list'>
+          Add Amber List Item
+        </button>
+        <button
           type='submit'
           className='btn btn-danger food-input'
-          htmlFor='red-list'
-          value='Add Red List Item'
-        />
-        <input
+          htmlFor='red-list'>
+          Add Red List Item
+        </button>
+        <button
           className='btn btn-primary edit-food-input'
-          id='edit-food-input'
-          value='Edit Food Lists'
-        />
+          id='edit-food-input'>
+          Edit Food Lists
+        </button>
       </form>
     </div>
   );

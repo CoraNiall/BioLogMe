@@ -10,18 +10,16 @@ module.exports = {
   connectToServer: function () {
     mongoclient.connect(function (err, mongoclient) {
       assert.equal(null, err);
-      db = mongoclient.db('users');
+      db = mongoclient.db('biologmeUsers');
       console.log('Successfully connected to the DB');
       return db;
     });
   },
 
-  getDb: function () {
-    return db;
-  },
-
-  getCollection: function (collName) {
-    const collection = db.collection(collName);
+  getUsersCollection: function (db) {
+    db = mongoclient.db('biologmeUsers');
+    const collection = db.collection('users');
+    console.log(`Connected to users collection`);
     return collection;
   },
 

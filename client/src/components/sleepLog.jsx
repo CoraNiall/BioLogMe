@@ -33,11 +33,9 @@ export default function SleepLog() {
           max='8'
           step='0.5'
         />
-        <input
-          className='btn btn-primary sleep-input'
-          id='add-sleep-input'
-          value='Log Sleep'
-        />
+        <button className='btn btn-primary sleep-input' id='add-sleep-input'>
+          Log Sleep
+        </button>
       </form>
     </div>
   );

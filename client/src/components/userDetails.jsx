@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 import '../styles/log.css';
 
-export default function UserDetails(props) {
+export default function UserDetails() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -20,13 +21,17 @@ export default function UserDetails(props) {
   };
 
   const handleSubmit = e => {
-    console.log(name);
+    axios.post('/user-details', {
+      name: name,
+      email: email,
+      password: password,
+    });
   };
 
   return (
     <div className='container-sm col-md-8'>
       <h2>Personal Details</h2>
-      <form action='#' onSubmit={handleSubmit}>
+      <form action='#'>
         <div className='mb-3'>
           <label htmlFor='name'>Enter your name:</label>
           <input
@@ -61,11 +66,12 @@ export default function UserDetails(props) {
             required
           />
           <br />
-          <input
+          <button
             type='submit'
             className='btn btn-primary user-details-btn'
-            value='Submit'
-          />
+            onSubmit={handleSubmit}>
+            Submit
+          </button>
         </div>
       </form>
     </div>

@@ -5,10 +5,10 @@ router.get('/login', (req, res) => {
   console.log('Hello World! This will eventually be a login page');
 });
 
-router.post('/user-dashboard', (req, res) => {
+router.post('/user-details', (req, res) => {
+  const { name, email, password } = req.body;
   res.send({
-    message:
-      "This route is for the User's dashboard where they can log their data",
+    message: 'User details updated successfully',
   });
 });
 

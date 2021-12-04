@@ -14,16 +14,16 @@ export default function CreateSymptomLog() {
           className='form-control'
           placeholder='Type symptom here'
         />
-        <input
+        <button
           className='btn btn-primary symptom-input'
-          id='add-symptom-input'
-          value='Add Symptom'
-        />
-        <input
+          id='add-symptom-input'>
+          Add Symptom
+        </button>
+        <button
           className='btn btn-primary symptom-input'
-          id='add-symptom-input'
-          value='View Symptom List'
-        />
+          id='add-symptom-input'>
+          View Symptom List
+        </button>
       </form>
     </div>
   );

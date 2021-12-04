@@ -46,11 +46,9 @@ export default function FoodLog() {
           />
         </div>
         <div className='food-form'>
-          <input
-            className='btn btn-primary food-input'
-            id='add-food-input'
-            value='Log Food'
-          />
+          <button className='btn btn-primary food-input' id='add-food-input'>
+            Log Food
+          </button>
         </div>
       </form>
     </div>

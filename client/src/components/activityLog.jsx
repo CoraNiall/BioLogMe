@@ -13,16 +13,16 @@ export default function ActivityLog() {
           id='add-activity'
           placeholder='Start typing activity here'
         />
-        <input
+        <button
           className='btn btn-primary activity-input'
-          id='add-activity-input'
-          value='Add Activity'
-        />
-        <input
+          id='add-activity-input'>
+          Add Activity
+        </button>
+        <button
           className='btn btn-primary activity-input'
-          id='view-activity-input'
-          value='Visualise Activity'
-        />
+          id='view-activity-input'>
+          Visualise Activity
+        </button>
       </form>
     </div>
   );

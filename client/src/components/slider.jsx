@@ -28,12 +28,9 @@ export default function Slider() {
         <br />
         <label>Value: {sliderValue}</label>
         <br />
-        <input
-          variant='primary'
-          value='Log Mood Score'
-          className='btn btn-primary mood-input'
-          id='add-mood-input'
-        />
+        <button className='btn btn-primary mood-input' id='add-mood-input'>
+          Log Mood Score
+        </button>
       </form>
     </div>
   );

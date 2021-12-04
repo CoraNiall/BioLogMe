@@ -14,17 +14,16 @@ export default function CreateActivityLog() {
           id='add-activity'
           placeholder='Type activity here'
         />
-        <input
+        <button
           className='btn btn-primary activity-input'
-          id='add-activity-input'
-          value='Add Activity'
-        />
-        <input
-          variant='primary'
+          id='add-activity-input'>
+          Add Activity
+        </button>
+        <button
           className='btn btn-primary activity-input'
-          id='add-activity-input'
-          value='View Activity List'
-        />
+          id='add-activity-input'>
+          View Activity List
+        </button>
       </form>
     </div>
   );
