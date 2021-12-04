@@ -14,7 +14,7 @@ export default function Slider() {
   return (
     <div className='container-sm'>
       <form id='mood-slider'>
-        <label>Mood score:</label>
+        <h2>Mood score:</h2>
         <input
           className='w-100 p-3'
           type='range'

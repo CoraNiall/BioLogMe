@@ -8,12 +8,12 @@ import '../styles/log.css';
 
 export default function UserProfile() {
   return (
-    <>
+    <div className='container-fluid profile-container'>
       <h1>Profile Page</h1>
       <UserDetails />
       <CreateFoodLog />
       <CreateActivityLog />
       <CreateSymptomLog />
-    </>
+    </div>
   );
 }

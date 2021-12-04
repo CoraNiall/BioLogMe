@@ -5,7 +5,7 @@ import './../styles/log.css';
 export default function FoodLog() {
   return (
     <div className='container-sm col-md-8'>
-      <h1>Add your food</h1>
+      <h2>Add your food</h2>
       <form action='' method='post' className='mb-3'>
         <div className='mb-3'>
           <label className='form-label' htmlFor='breakfast'>

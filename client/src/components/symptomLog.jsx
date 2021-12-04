@@ -5,7 +5,7 @@ import './../styles/log.css';
 export default function SymptomLog() {
   return (
     <div className='container-sm col-md-8'>
-      <h1>Log your symptom</h1>
+      <h2>Log your symptom</h2>
       <form action='' method='post' className='mb-3'>
         <label className='form-label' htmlFor='symptoms'>
           Symptom:

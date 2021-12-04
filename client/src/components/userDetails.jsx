@@ -25,7 +25,7 @@ export default function UserDetails(props) {
 
   return (
     <div className='container-sm col-md-8'>
-      <h1>Personal Details</h1>
+      <h2>Personal Details</h2>
       <form action='#' onSubmit={handleSubmit}>
         <div className='mb-3'>
           <label htmlFor='name'>Enter your name:</label>

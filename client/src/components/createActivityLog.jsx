@@ -5,7 +5,7 @@ import '../styles/createLog.css';
 export default function CreateActivityLog() {
   return (
     <div className='container-sm col-md-8'>
-      <h1>Create your activity list</h1>
+      <h2>Create your activity list</h2>
       <form action='' method='post' className='mb-3'>
         <input
           type='text'

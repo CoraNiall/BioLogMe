@@ -5,7 +5,7 @@ import './../styles/log.css';
 export default function SleepLog() {
   return (
     <div className='container-sm col-md-8'>
-      <h1>Add your sleep</h1>
+      <h2>Add your sleep</h2>
       <form action='' method='post' className='mb-3'>
         <label>Sleep start: </label>
         <input

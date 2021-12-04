@@ -8,9 +8,7 @@ import Slider from './slider';
 export default function UserDashboard() {
   return (
     <div className='container-fluid dashboard-container'>
-      <div>
-        <h2>User Dashboard</h2>
-      </div>
+      <h1>User Dashboard</h1>
       <div>
         <ActivityLog />
       </div>
