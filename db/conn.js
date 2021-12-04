@@ -1,23 +1,32 @@
 const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
 
-const URI = process.env.URI;
+const mongoclient = new MongoClient(process.env.URI, {
+  useUnifiedTopology: true,
+  useNewUrlParser: true,
+});
 
-// Use connect method to connect to the Server
-const mongoclient = new MongoClient(URI);
-
-async function run() {
-  try {
-    // Connect the client to the server
-    await mongoclient.connect(function (err) {
+module.exports = {
+  connectToServer: function () {
+    mongoclient.connect(function (err, mongoclient) {
       assert.equal(null, err);
+      db = mongoclient.db('users');
+      console.log('Successfully connected to the DB');
+      return db;
     });
-    // Establish and verify connection
-    await mongoclient.db('users');
-    console.log('Connected successfully to server');
-  } finally {
-    // Ensures that the client will close when you finish/error
-    await mongoclient.close();
-  }
-}
-run().catch(console.dir);
+  },
+
+  getDb: function () {
+    return db;
+  },
+
+  getCollection: function (collName) {
+    const collection = db.collection(collName);
+    return collection;
+  },
+
+  closeConnection: function () {
+    console.log('DB connection closed');
+    mongoclient.close();
+  },
+};
