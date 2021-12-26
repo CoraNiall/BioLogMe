@@ -2,10 +2,20 @@
   "name": "biologme",
   "version": "1.0.0",
   "description": "A Bio Logging App for Mental Wellbeing",
-  "main": "index.js",
+  "main": "./index.mjs",
+  "exports": {
+    "import": "./index.mjs"
+  },
+  "type": "module",
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
   "scripts": {
     "test": "test",
-    "start": "nodemon server/index.js"
+    "start": "nodemon --experimental-modules server/index.mjs",
+    "transpile": "babel ./server --out-dir dist-server"
   },
   "repository": {
     "type": "git",
@@ -18,12 +28,17 @@
   },
   "homepage": "https://github.com/CoraNiall/BioLogMe#readme",
   "dependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.5",
+    "@babel/preset-env": "^7.16.5",
     "axios": "^0.21.1",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
+    "esm": "^3.2.25",
     "express": "^4.17.1",
     "mongodb": "^4.1.3",
     "nodemon": "^2.0.15",
-    "react-router-dom": "^5.2.0"
+    "react-router-dom": "^5.2.0",
+    "rimraf": "^3.0.2"
   }
 }

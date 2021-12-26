@@ -1,7 +1,7 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
 
-router.get('/login', (req, res) => {
+router.post('/login', (req, res) => {
   console.log('Hello World! This will eventually be a login page');
 });
 
@@ -25,4 +25,5 @@ router.get('/home', (req, res) => {
       'This is where the user will eventually view their data visualisations',
   });
 });
-module.exports = router;
+
+export default router;
