@@ -3,7 +3,12 @@ import cors from 'cors';
 import express from 'express';
 import router from './src/routes/api.js';
 import { connectToDb, getUsersCollection } from './db/conn.js';
-import { createUser, getUser } from './src/components/userDetails.js';
+import {
+  createUser,
+  getUserById,
+  updateUserById,
+  deleteUserById,
+} from './src/components/userDetails.js';
 dotenv.config();
 
 const app = express();
@@ -19,7 +24,15 @@ app.use('/', router);
 const mongoclient = await connectToDb();
 await getUsersCollection(mongoclient);
 
-// await getUser(mongoclient, '12345');
+// await createUser(mongoclient, {
+//   name: 'Caroline Reiss',
+//   email: 'caz@caz.com',
+//   password: 'a-password',
+// });
+
+// await getUserById(mongoclient, '12345');
+
+// await deleteUserById(mongoclient, '123456');
 
 app.listen(PORT, () => {
   console.log(`Example app listening at http://localhost:${PORT}`);
