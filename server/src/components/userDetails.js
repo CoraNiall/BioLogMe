@@ -1,8 +1,8 @@
 async function createUser(mongoclient, newUser) {
-  const { name, email, password } = newUser;
+  const { userName, email, password } = newUser;
   const user = await mongoclient.db('biologme').collection('users').insertOne({
-    userId: '123456',
-    userName: name,
+    id: '123456',
+    userName: userName,
     email: email,
     password: password,
   });

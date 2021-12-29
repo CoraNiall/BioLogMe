@@ -6,7 +6,7 @@ router.post('/login', (req, res) => {
 });
 
 router.post('/user-details', (req, res) => {
-  const { name, email, password } = req.body;
+  const { userName, email, password } = req.body;
   res.send({
     message: 'User details updated successfully',
   });

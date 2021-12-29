@@ -25,14 +25,14 @@ const mongoclient = await connectToDb();
 await getUsersCollection(mongoclient);
 
 // await createUser(mongoclient, {
-//   name: 'Caroline Reiss',
+//   userName: 'Caroline Reiss',
 //   email: 'caz@caz.com',
 //   password: 'a-password',
 // });
 
 // await getUserById(mongoclient, '12345');
 
-// await deleteUserById(mongoclient, '123456');
+await deleteUserById(mongoclient, '123456');
 
 app.listen(PORT, () => {
   console.log(`Example app listening at http://localhost:${PORT}`);
