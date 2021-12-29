@@ -14,7 +14,7 @@
   },
   "scripts": {
     "test": "test",
-    "start": "nodemon --experimental-modules server/index.js",
+    "start": "nodemon server/index.js",
     "transpile": "babel ./server --out-dir dist-server"
   },
   "repository": {
