@@ -2,12 +2,8 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import express from 'express';
 import router from './src/routes/api.js';
-import {
-  dbConnect,
-  getUsersCollection,
-  closeConnection,
-  listDatabases,
-} from './db/conn.js';
+import { connectToDb, getUsersCollection } from './db/conn.js';
+import { createUser, getUser } from './src/components/userDetails.js';
 dotenv.config();
 
 const app = express();
@@ -20,8 +16,10 @@ app.use('/static', express.static('public'));
 
 app.use('/', router);
 
-const mongoclient = await dbConnect();
+const mongoclient = await connectToDb();
 await getUsersCollection(mongoclient);
+
+// await getUser(mongoclient, '12345');
 
 app.listen(PORT, () => {
   console.log(`Example app listening at http://localhost:${PORT}`);

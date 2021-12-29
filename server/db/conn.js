@@ -4,31 +4,32 @@ import assert from 'assert';
 
 dotenv.config();
 
-async function dbConnect() {
+async function connectToDb() {
   const mongoclient = new MongoClient(process.env.URI, {
     useUnifiedTopology: true,
     useNewUrlParser: true,
   });
 
-  mongoclient.connect().then(console.log('Successfully connected to the DB'));
+  try {
+    await mongoclient
+      .connect()
+      .then(console.log('Successfully connected to the DB'));
+  } catch (e) {
+    console.error(e);
+  }
 
   return mongoclient;
 }
 
 async function getUsersCollection(mongoclient) {
-  const collection = mongoclient.db('biologmeUsers').collection('users');
+  const collection = await mongoclient.db('biologmeUsers').collection('users');
   console.log(`Successfully connected to Users collection`);
   return collection;
 }
 
 async function closeConnection(mongoclient) {
-  mongoclient.close();
+  await mongoclient.close();
   console.log('DB connection now closed');
 }
 
-async function listDatabases(mongoclient) {
-  const allDatabases = mongoclient.db('biologmeUsers').admin().listDatabases();
-  console.log(allDatabases);
-}
-
-export { dbConnect, getUsersCollection, closeConnection, listDatabases };
+export { connectToDb, getUsersCollection, closeConnection };

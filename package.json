@@ -2,9 +2,9 @@
   "name": "biologme",
   "version": "1.0.0",
   "description": "A Bio Logging App for Mental Wellbeing",
-  "main": "./index.mjs",
+  "main": "./index.js",
   "exports": {
-    "import": "./index.mjs"
+    "import": "./index.js"
   },
   "type": "module",
   "babel": {
@@ -14,7 +14,7 @@
   },
   "scripts": {
     "test": "test",
-    "start": "nodemon --experimental-modules server/index.mjs",
+    "start": "nodemon --experimental-modules server/index.js",
     "transpile": "babel ./server --out-dir dist-server"
   },
   "repository": {
