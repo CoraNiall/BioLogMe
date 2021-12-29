@@ -8,7 +8,7 @@ import {
   getUserById,
   updateUserById,
   deleteUserById,
-} from './src/components/userDetails.js';
+} from './db/userDetails.js';
 dotenv.config();
 
 const app = express();
@@ -25,14 +25,16 @@ const mongoclient = await connectToDb();
 await getUsersCollection(mongoclient);
 
 // await createUser(mongoclient, {
-//   userName: 'Caroline Reiss',
-//   email: 'caz@caz.com',
+//   userName: 'Jim Reiss',
+//   email: 'jim@jim.com',
 //   password: 'a-password',
 // });
 
-// await getUserById(mongoclient, '12345');
+// await getUserById(mongoclient, '123456');
 
-await deleteUserById(mongoclient, '123456');
+// await updateUserById(mongoclient, '123456', { userName: 'Layla Reiss' });
+
+// await deleteUserById(mongoclient, '123456');
 
 app.listen(PORT, () => {
   console.log(`Example app listening at http://localhost:${PORT}`);
