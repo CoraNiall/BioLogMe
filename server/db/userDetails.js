@@ -1,11 +1,20 @@
+function createUniqueUser() {
+  let uniqueId = Math.random().toString();
+  let shortUniqueId = uniqueId.substr(2, 7);
+  const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  let randomCharacter = alphabet[Math.floor(Math.random() * alphabet.length)];
+  const uuid = `${randomCharacter}${shortUniqueId}`;
+  return uuid;
+}
+
 async function createUser(mongoclient, newUser) {
   try {
     const { name, email, password } = newUser;
-    const user = await mongoclient
+    await mongoclient
       .db('biologme')
       .collection('users')
       .insertOne({
-        id: '123456',
+        id: createUniqueUser(),
         userName: name,
         email: email,
         password: password,

@@ -1,7 +1,8 @@
 import dotenv from 'dotenv';
 import cors from 'cors';
 import express from 'express';
-import router from './src/routes/api.js';
+import apiRouter from './src/routes/api.js';
+import userRouter from './src/routes/user/user.js';
 import { connectToDb, getUsersCollection } from './db/conn.js';
 
 dotenv.config();
@@ -14,14 +15,9 @@ app.use(cors({ origin: true, credentials: true }));
 app.use(express.json());
 app.use('/static', express.static('public'));
 
-app.use('/', router);
+app.use('/', (apiRouter, userRouter));
 
 export const mongoclient = await connectToDb();
-// await createUser(mongoclient, {
-//   userName: 'Jim Reiss',
-//   email: 'jim@jim.com',
-//   password: 'a-password',
-// });
 
 // await getUserById(mongoclient, '123456');
 
