@@ -3,7 +3,7 @@ import cors from 'cors';
 import express from 'express';
 import apiRouter from './src/routes/api.js';
 import userRouter from './src/routes/user/user.js';
-import { connectToDb, getUsersCollection } from './db/conn.js';
+import { connectToDb } from './db/conn.js';
 
 dotenv.config();
 
