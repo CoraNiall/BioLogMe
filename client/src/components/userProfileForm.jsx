@@ -2,7 +2,7 @@ import React from 'react';
 import CreateFoodLog from './createFoodLog';
 import CreateActivityLog from './createActivityLog';
 import CreateSymptomLog from './createSymptomLog';
-import UserDetails from './userDetails';
+import CreateUser from './createUser';
 
 import '../styles/log.css';
 
@@ -10,10 +10,18 @@ export default function UserProfile() {
   return (
     <div className='container-fluid profile-container'>
       <h1>Profile Page</h1>
-      <UserDetails />
-      <CreateFoodLog />
-      <CreateActivityLog />
-      <CreateSymptomLog />
+      <div>
+        <CreateUser />
+      </div>
+      <div>
+        <CreateFoodLog />
+      </div>
+      <div>
+        <CreateActivityLog />
+      </div>
+      <div>
+        <CreateSymptomLog />
+      </div>
     </div>
   );
 }

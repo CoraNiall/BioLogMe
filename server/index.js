@@ -3,27 +3,20 @@ import cors from 'cors';
 import express from 'express';
 import router from './src/routes/api.js';
 import { connectToDb, getUsersCollection } from './db/conn.js';
-import {
-  createUser,
-  getUserById,
-  updateUserById,
-  deleteUserById,
-} from './db/userDetails.js';
+
 dotenv.config();
 
 const app = express();
 
 const PORT = process.env.PORT || 8080;
 
-app.use(cors());
+app.use(cors({ origin: true, credentials: true }));
 app.use(express.json());
 app.use('/static', express.static('public'));
 
 app.use('/', router);
 
-const mongoclient = await connectToDb();
-await getUsersCollection(mongoclient);
-
+export const mongoclient = await connectToDb();
 // await createUser(mongoclient, {
 //   userName: 'Jim Reiss',
 //   email: 'jim@jim.com',
