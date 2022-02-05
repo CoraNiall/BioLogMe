@@ -1,6 +1,6 @@
 import { createUniqueUser } from '../src/utils.js';
 
-async function createUser(mongoclient, newUser) {
+async function registerUser(mongoclient, newUser) {
   try {
     const { name, email, password } = newUser;
     await mongoclient
@@ -21,22 +21,7 @@ async function createUser(mongoclient, newUser) {
   }
 }
 
-async function getUserById(mongoclient, userId) {
-  try {
-    const user = await mongoclient
-      .db('biologme')
-      .collection('users')
-      .findOne({ id: userId });
-    if (user) {
-      console.log(user);
-      return user;
-    } else {
-      console.log('User not found');
-    }
-  } catch (e) {
-    console.error(e);
-  }
-}
+async function getUser(mongoclient, user) {}
 
 async function updateUserById(mongoclient, userId, updateValue) {
   try {
@@ -63,4 +48,4 @@ async function deleteUserById(mongoclient, userId) {
   }
 }
 
-export { createUser, getUserById, updateUserById, deleteUserById };
+export { registerUser, getUser, updateUserById, deleteUserById };

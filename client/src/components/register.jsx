@@ -3,7 +3,7 @@ import axios from 'axios';
 
 import '../styles/log.css';
 
-export default function CreateUser() {
+export default function Register() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -12,7 +12,6 @@ export default function CreateUser() {
 
   const handleSubmit = async e => {
     e.preventDefault();
-    console.log(formData);
     setFormData({
       name: '',
       email: '',
@@ -20,7 +19,7 @@ export default function CreateUser() {
     });
 
     try {
-      await axios.post('http://localhost:8080/profile-page/create-user', {
+      await axios.post('http://localhost:8080/register', {
         formData,
       });
     } catch (e) {
@@ -31,10 +30,7 @@ export default function CreateUser() {
   return (
     <div className='container-sm col-md-8'>
       <h2>Personal Details</h2>
-      <form
-        action='/profile-page/create-user'
-        method='post'
-        onSubmit={handleSubmit}>
+      <form action='/register' method='post' onSubmit={handleSubmit}>
         <div className='mb-3'>
           <input
             type='text'

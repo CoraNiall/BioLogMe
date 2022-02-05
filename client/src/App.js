@@ -3,6 +3,8 @@ import './App.css';
 import UserDashboard from './components/userDashboard';
 import UserProfile from './components/userProfileForm';
 import HeaderNav from './components/headerNav';
+import Register from './components/register';
+import Login from './components/login';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 function App() {
@@ -11,7 +13,12 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route path='/login'>
-            <h2>Eventually this will be a login page</h2>
+            <Login />
+          </Route>
+        </Switch>
+        <Switch>
+          <Route path='/register'>
+            <Register />
           </Route>
         </Switch>
         <Switch>
