@@ -11,22 +11,22 @@ const userRouter = express.Router();
 
 userRouter.post('/register', async (req, res) => {
   const newUser = req.body.formData;
-  await registerUser(mongoclient, newUser);
-  res.send(newUser);
+  try {
+    await registerUser(mongoclient, newUser);
+    res.send({ message: 'User successfully registered', user: newUser });
+  } catch (e) {
+    console.error(e);
+  }
 });
 
 userRouter.post('/login', async (req, res) => {
-  const { email, password } = req.body.user;
+  const user = req.body.user;
   try {
-    const userObj = await mongoclient
-      .db('biologme')
-      .collection('users')
-      .findOne({ email: email, password: password });
-
+    const userObj = await getUser(mongoclient, user);
     if (!userObj) {
       res.send({ message: 'User not found' });
     } else {
-      res.send({ message: 'Successful login', user: userObj.id });
+      res.send({ message: 'Successful login', user: userObj });
     }
   } catch (e) {
     console.error(e);

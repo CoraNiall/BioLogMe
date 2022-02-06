@@ -21,15 +21,9 @@ async function connectToDb() {
   return mongoclient;
 }
 
-async function getUsersCollection(mongoclient) {
-  const collection = await mongoclient.db('biologmeUsers').collection('users');
-  console.log(`Successfully connected to Users collection`);
-  return collection;
-}
-
 async function closeConnection(mongoclient) {
   await mongoclient.close();
   console.log('DB connection now closed');
 }
 
-export { connectToDb, getUsersCollection, closeConnection };
+export { connectToDb, closeConnection };

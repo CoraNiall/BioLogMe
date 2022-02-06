@@ -17,7 +17,7 @@ export default function Login() {
         user,
       })
       .then(res => {
-        console.log(res.data.user || 'User not found');
+        console.log(res.data || 'User not found');
       })
       .catch(e => {
         console.log('User not found', e);

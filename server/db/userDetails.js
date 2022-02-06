@@ -1,8 +1,8 @@
 import { createUniqueUser } from '../src/utils.js';
 
 async function registerUser(mongoclient, newUser) {
+  const { name, email, password } = newUser;
   try {
-    const { name, email, password } = newUser;
     await mongoclient
       .db('biologme')
       .collection('users')
@@ -21,7 +21,23 @@ async function registerUser(mongoclient, newUser) {
   }
 }
 
-async function getUser(mongoclient, user) {}
+async function getUser(mongoclient, user) {
+  const { email, password } = user;
+  try {
+    const userObj = await mongoclient
+      .db('biologme')
+      .collection('users')
+      .findOne({ email: email, password: password });
+
+    if (!userObj) {
+      console.log('User not found');
+    } else {
+      return userObj;
+    }
+  } catch (e) {
+    console.error(e);
+  }
+}
 
 async function updateUserById(mongoclient, userId, updateValue) {
   try {

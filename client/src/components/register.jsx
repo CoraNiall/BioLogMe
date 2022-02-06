@@ -19,9 +19,13 @@ export default function Register() {
     });
 
     try {
-      await axios.post('http://localhost:8080/register', {
-        formData,
-      });
+      await axios
+        .post('http://localhost:8080/register', {
+          formData,
+        })
+        .then(res => {
+          console.log(res.data);
+        });
     } catch (e) {
       console.error(e);
     }
