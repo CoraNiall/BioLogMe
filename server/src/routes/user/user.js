@@ -5,6 +5,7 @@ import {
   getUser,
   updateUserById,
   deleteUserById,
+  checkUserExists,
 } from '../../../db/userDetails.js';
 
 const userRouter = express.Router();
@@ -12,8 +13,13 @@ const userRouter = express.Router();
 userRouter.post('/register', async (req, res) => {
   const newUser = req.body.formData;
   try {
-    await registerUser(mongoclient, newUser);
-    res.send({ message: 'User successfully registered', user: newUser });
+    const userObj = await checkUserExists(mongoclient, newUser.email);
+    if (!userObj) {
+      await registerUser(mongoclient, newUser);
+      res.send({ message: 'User successfully registered', user: newUser });
+    } else {
+      res.send({ message: 'User already registered' });
+    }
   } catch (e) {
     console.error(e);
   }

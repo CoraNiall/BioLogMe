@@ -41,7 +41,7 @@ export default function Register() {
             name='name'
             className='form-control'
             id='name'
-            placeholder='Enter your name'
+            placeholder='Enter a username'
             value={formData.name}
             onChange={e => setFormData({ ...formData, name: e.target.value })}
             required

@@ -18,6 +18,7 @@ export default function Login() {
       })
       .then(res => {
         console.log(res.data || 'User not found');
+        document.cookie = `userName: ${res.data.user.userName}, userId: ${res.data.user.id}, status: "LOGGED_IN"`;
       })
       .catch(e => {
         console.log('User not found', e);

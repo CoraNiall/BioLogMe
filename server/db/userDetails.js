@@ -64,4 +64,27 @@ async function deleteUserById(mongoclient, userId) {
   }
 }
 
-export { registerUser, getUser, updateUserById, deleteUserById };
+async function checkUserExists(mongoclient, email) {
+  try {
+    const userObj = await mongoclient
+      .db('biologme')
+      .collection('users')
+      .findOne({ email: email });
+
+    if (!userObj) {
+      console.log('User not found');
+    } else {
+      return userObj;
+    }
+  } catch (e) {
+    console.error(e);
+  }
+}
+
+export {
+  registerUser,
+  getUser,
+  updateUserById,
+  deleteUserById,
+  checkUserExists,
+};
