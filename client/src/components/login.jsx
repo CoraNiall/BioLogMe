@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 import '../styles/log.css';
 
 export default function Login() {
+  const navigate = useNavigate();
+
+  const [authenticated, setAuthenticated] = useState(false);
+
   const [user, setUser] = useState({
     email: '',
     password: '',
@@ -18,7 +23,15 @@ export default function Login() {
       })
       .then(res => {
         console.log(res.data || 'User not found');
-        document.cookie = `userName: ${res.data.user.userName}, userId: ${res.data.user.id}, status: "LOGGED_IN"`;
+        let loggedInUser = res.data.user;
+        if (!loggedInUser) {
+          alert(
+            'User/password incorrect. Please check your details and try again'
+          );
+        } else {
+          setAuthenticated(() => authenticated);
+          navigate('/user-dashboard');
+        }
       })
       .catch(e => {
         console.log('User not found', e);
@@ -28,7 +41,7 @@ export default function Login() {
   return (
     <div className='container-sm col-md-8'>
       <h2>Please log in to access BioLogMe</h2>
-      <form action='/login' method='get' onSubmit={handleSubmit}>
+      <form action='/login' method='post' onSubmit={handleSubmit}>
         <div className='mb-3'>
           <br />
           <input
@@ -53,9 +66,13 @@ export default function Login() {
             required
           />
           <br />
-          <button type='submit' className='btn btn-primary user-details-btn'>
-            Submit
-          </button>
+          <div>
+            <input
+              className='btn btn-primary user-details-btn'
+              type='submit'
+              value='Submit'
+            />
+          </div>
         </div>
       </form>
     </div>

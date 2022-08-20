@@ -32,7 +32,10 @@ userRouter.post('/login', async (req, res) => {
     if (!userObj) {
       res.send({ message: 'User not found' });
     } else {
-      res.send({ message: 'Successful login', user: userObj });
+      res.send({
+        message: 'Successful login',
+        user: userObj,
+      });
     }
   } catch (e) {
     console.error(e);
