@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import '../styles/register.css';
 
-export default function Login() {
+export default function Login({ setToken }) {
   const navigate = useNavigate();
-
-  const [authenticated, setAuthenticated] = useState(false);
 
   const [user, setUser] = useState({
     email: '',
@@ -24,12 +23,13 @@ export default function Login() {
       .then(res => {
         console.log(res.data || 'User not found');
         let loggedInUser = res.data.user;
+        let token = res.data.token;
         if (!loggedInUser) {
           alert(
             'User/password incorrect. Please check your details and try again'
           );
         } else {
-          setAuthenticated(() => authenticated);
+          setToken(JSON.stringify(token));
           navigate('/user-dashboard');
         }
       })
@@ -82,3 +82,7 @@ export default function Login() {
     </div>
   );
 }
+
+Login.propTypes = {
+  setToken: PropTypes.func.isRequired,
+};

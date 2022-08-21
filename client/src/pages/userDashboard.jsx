@@ -1,10 +1,10 @@
 import React from 'react';
-import FoodLog from './foodLog';
-import SleepLog from './sleepLog';
-import ActivityLog from './activityLog';
-import SymptomLog from './symptomLog';
-import Slider from './slider';
-import HeaderNav from './headerNav';
+import FoodLog from '../components/foodLog';
+import SleepLog from '../components/sleepLog';
+import ActivityLog from '../components/activityLog';
+import SymptomLog from '../components/symptomLog';
+import Slider from '../components/slider';
+import HeaderNav from '../components/headerNav';
 
 export default function UserDashboard() {
   return (

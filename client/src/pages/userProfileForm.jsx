@@ -1,10 +1,10 @@
 import React from 'react';
-import CreateFoodLog from './createFoodLog';
-import CreateActivityLog from './createActivityLog';
-import CreateSymptomLog from './createSymptomLog';
+import CreateFoodLog from '../components/createFoodLog';
+import CreateActivityLog from '../components/createActivityLog';
+import CreateSymptomLog from '../components/createSymptomLog';
 
 import '../styles/log.css';
-import HeaderNav from './headerNav';
+import HeaderNav from '../components/headerNav';
 
 export default function UserProfile() {
   return (

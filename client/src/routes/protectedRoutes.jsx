@@ -1,7 +1,11 @@
 import React from 'react';
 import { Navigate, Outlet } from 'react-router';
 
-export function ProtectedRoutes() {
-  let auth = { "token": true };
-  return auth.token ? <Outlet /> : <Navigate to='/login' replace={true} />;
+export function ProtectedRoutes({ userToken }) {
+  let auth = { token: userToken };
+  if (auth.token) {
+    return <Outlet />;
+  } else {
+    return <Navigate to='/login' replace={true} />;
+  }
 }

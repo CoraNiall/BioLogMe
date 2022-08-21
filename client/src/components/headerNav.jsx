@@ -29,7 +29,7 @@ export default function Headerdiv() {
           </li>
           <li className='nav-item'>
             {' '}
-            <a href='/login' className='nav-link'>
+            <a href='/' className='nav-link'>
               Log Out
             </a>
           </li>

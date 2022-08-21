@@ -1,5 +1,5 @@
 import React from 'react';
-import HeaderNav from './headerNav';
+import HeaderNav from '../components/headerNav';
 
 export default function HomeVisualisation() {
   return (

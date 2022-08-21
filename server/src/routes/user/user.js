@@ -35,6 +35,7 @@ userRouter.post('/login', async (req, res) => {
       res.send({
         message: 'Successful login',
         user: userObj,
+        token: 'user-token-123',
       });
     }
   } catch (e) {
