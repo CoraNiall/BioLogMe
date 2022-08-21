@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-import '../styles/log.css';
+import '../styles/register.css';
 
 export default function Login() {
   const navigate = useNavigate();
@@ -75,6 +75,10 @@ export default function Login() {
           </div>
         </div>
       </form>
+      <p className='loginLink'>
+        Not yet registered? Click <a href='/register'>here</a> to create an
+        account
+      </p>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-import '../styles/log.css';
+import '../styles/register.css';
 
 export default function Register() {
   const [formData, setFormData] = useState({
@@ -74,6 +74,9 @@ export default function Register() {
           <button type='submit' className='btn btn-primary user-details-btn'>
             Submit
           </button>
+          <p className='registerLink'>
+            Already registered? Click <a href='/login'>here</a> to log in
+          </p>
         </div>
       </form>
     </div>
