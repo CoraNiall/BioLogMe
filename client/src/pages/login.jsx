@@ -30,7 +30,7 @@ export default function Login({ setToken }) {
           );
         } else {
           setToken(JSON.stringify(token));
-          navigate('/user-dashboard');
+          navigate('/home');
         }
       })
       .catch(e => {

@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 import '../styles/register.css';
 
 export default function Register() {
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -25,6 +28,8 @@ export default function Register() {
         })
         .then(res => {
           console.log(res.data);
+          alert('New user successfully created. Please now log in.');
+          navigate('/login');
         });
     } catch (e) {
       console.error(e);
