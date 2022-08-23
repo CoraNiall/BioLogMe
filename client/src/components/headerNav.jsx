@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import './../styles/nav.css';
 
@@ -11,27 +12,27 @@ export default function Headerdiv() {
         <div className='me-auto'>
           <li className='nav-item'>
             {' '}
-            <a href='/home' className='nav-link'>
+            <Link to='/home' className='nav-link'>
               Home
-            </a>
+            </Link>
           </li>
           <li className='nav-item'>
             {' '}
-            <a href='/user-dashboard' className='nav-link'>
+            <Link to='/user-dashboard' className='nav-link'>
               Dashboard
-            </a>
+            </Link>
           </li>
           <li className='nav-item'>
             {' '}
-            <a href='/profile-page' className='nav-link'>
+            <Link to='/profile-page' className='nav-link'>
               Profile
-            </a>
+            </Link>
           </li>
           <li className='nav-item'>
             {' '}
-            <a href='/' className='nav-link'>
+            <Link to='/' className='nav-link'>
               Log Out
-            </a>
+            </Link>
           </li>
         </div>
       </ul>

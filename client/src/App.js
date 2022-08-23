@@ -20,7 +20,7 @@ function App() {
           <Route path='/' element={<PublicHomePage />} />
           <Route path='/login' element={<Login setToken={setToken} />} />
           <Route path='/register' element={<Register />} />
-          <Route element={<ProtectedRoutes userToken={token} />}>
+          <Route element={<ProtectedRoutes userToken={token} children />}>
             <Route path='/home' element={<HomeVisualisation />} />
             <Route path='/user-dashboard' element={<UserDashboard />} />
             <Route path='/profile-page' element={<UserProfile />} />
