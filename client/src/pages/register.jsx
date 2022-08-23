@@ -28,8 +28,8 @@ export default function Register() {
         })
         .then(res => {
           console.log(res.data);
-          alert('New user successfully created. Please now log in.');
-          navigate('/login');
+          alert(res.data.message);
+          res.data.user ? navigate('/login') : navigate('/register');
         });
     } catch (e) {
       console.error(e);

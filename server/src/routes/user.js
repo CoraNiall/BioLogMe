@@ -1,12 +1,12 @@
 import express from 'express';
-import { mongoclient } from '../../../index.js';
+import { mongoclient } from '../../index.js';
 import {
   registerUser,
   getUser,
   updateUserById,
   deleteUserById,
   checkUserExists,
-} from '../../../db/userDetails.js';
+} from '../../db/userDetails.js';
 
 const userRouter = express.Router();
 
@@ -34,7 +34,10 @@ userRouter.post('/login', async (req, res) => {
     } else {
       res.send({
         message: 'Successful login',
-        user: userObj,
+        user: {
+          userId: userObj.id,
+          userName: userObj.userName,
+        },
         token: 'user-token-123',
       });
     }

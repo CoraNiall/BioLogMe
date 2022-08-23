@@ -1,15 +1,14 @@
 import React from 'react';
 import HeaderNav from '../components/headerNav';
 
-export default function HomeVisualisation(props) {
+export default function HomeVisualisation({ loggedInUser }) {
+  const { userName, userId } = loggedInUser;
   return (
     <>
       <HeaderNav />
-      <h1>Welcome to BioLog Me</h1>
+      <h1>Welcome to BioLog Me, {userName}</h1>
       <h2>This is the Home page</h2>
-      <h3>
-        This is where the user will eventually see their data visualisations
-      </h3>
+      <h3>This is where you will eventually see your data visualisations</h3>
     </>
   );
 }

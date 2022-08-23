@@ -15,8 +15,6 @@ function App() {
   const { token, setToken } = useToken();
   const { loggedInUser, setLoggedInUser } = useLoggedInUser();
 
-  console.log(loggedInUser);
-
   return (
     <div className='Main-wrapper'>
       <Router>
@@ -30,7 +28,10 @@ function App() {
           />
           <Route path='/register' element={<Register />} />
           <Route element={<ProtectedRoutes userToken={token} children />}>
-            <Route path='/home' element={<HomeVisualisation />} />
+            <Route
+              path='/home'
+              element={<HomeVisualisation loggedInUser={loggedInUser} />}
+            />
             <Route path='/user-dashboard' element={<UserDashboard />} />
             <Route path='/profile-page' element={<UserProfile />} />
           </Route>

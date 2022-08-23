@@ -15,22 +15,21 @@ export default function Login({ setToken, setLoggedInUser }) {
 
   const handleSubmit = async e => {
     e.preventDefault();
-
     await axios
       .post('http://localhost:8080/login', {
         user,
       })
       .then(res => {
         console.log(JSON.stringify(res.data.message) || 'User not found');
-        let loggedInUser = res.data.user;
+        let userFound = res.data.user;
         let token = res.data.token;
-        if (!loggedInUser) {
+        if (!userFound) {
           alert(
             'User/password incorrect. Please check your details and try again'
           );
         } else {
           setToken(JSON.stringify(token));
-          setLoggedInUser(loggedInUser);
+          setLoggedInUser(userFound);
           navigate('/home');
         }
       })
