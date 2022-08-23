@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import '../styles/register.css';
 
-export default function Login({ setToken }) {
+export default function Login({ setToken, setLoggedInUser }) {
   const navigate = useNavigate();
 
   const [user, setUser] = useState({
@@ -21,7 +21,7 @@ export default function Login({ setToken }) {
         user,
       })
       .then(res => {
-        console.log(res.data || 'User not found');
+        console.log(JSON.stringify(res.data.message) || 'User not found');
         let loggedInUser = res.data.user;
         let token = res.data.token;
         if (!loggedInUser) {
@@ -30,6 +30,7 @@ export default function Login({ setToken }) {
           );
         } else {
           setToken(JSON.stringify(token));
+          setLoggedInUser(loggedInUser);
           navigate('/home');
         }
       })
@@ -85,4 +86,5 @@ export default function Login({ setToken }) {
 
 Login.propTypes = {
   setToken: PropTypes.func.isRequired,
+  setLoggedInUser: PropTypes.func.isRequired,
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import HeaderNav from '../components/headerNav';
 
-export default function HomeVisualisation() {
+export default function HomeVisualisation(props) {
   return (
     <>
       <HeaderNav />
