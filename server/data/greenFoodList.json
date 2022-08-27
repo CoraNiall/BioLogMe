@@ -1,0 +1,16 @@
+{
+  "_id": "green",
+  "items": [
+    "fruit",
+    "vegetables",
+    "salads",
+    "fish",
+    "eggs",
+    "apple",
+    "lettuce",
+    "cucumber",
+    "pears",
+    "tomato"
+  ],
+  "score": 2
+}

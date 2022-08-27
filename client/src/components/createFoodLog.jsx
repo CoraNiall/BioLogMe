@@ -5,7 +5,7 @@ import '../styles/createLog.css';
 export default function CreateFoodLog() {
   return (
     <div className='container-sm col-md-8'>
-      <h2>Create your food list</h2>
+      <h2>Add to your food list</h2>
       <form action='' method='post' className='mb-3'>
         <input
           type='text'

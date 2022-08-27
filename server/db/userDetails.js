@@ -7,7 +7,7 @@ async function registerUser(mongoclient, newUser) {
       .db('biologme')
       .collection('users')
       .insertOne({
-        id: createUniqueUser(),
+        _id: createUniqueUser(),
         userName: name,
         email: email,
         password: password,
@@ -18,6 +18,8 @@ async function registerUser(mongoclient, newUser) {
     console.log('New user added');
   } catch (e) {
     console.error(e);
+  } finally {
+    await mongoclient.close();
   }
 }
 
@@ -36,6 +38,8 @@ async function getUser(mongoclient, user) {
     }
   } catch (e) {
     console.error(e);
+  } finally {
+    await mongoclient.close();
   }
 }
 
@@ -44,11 +48,13 @@ async function updateUserById(mongoclient, userId, updateValue) {
     const user = await mongoclient
       .db('biologme')
       .collection('users')
-      .updateOne({ id: userId }, { $set: updateValue });
+      .updateOne({ _id: userId }, { $set: updateValue });
     console.log(user);
     return user;
   } catch (e) {
     console.error(e);
+  } finally {
+    await mongoclient.close();
   }
 }
 
@@ -57,10 +63,12 @@ async function deleteUserById(mongoclient, userId) {
     const user = await mongoclient
       .db('biologme')
       .collection('users')
-      .deleteOne({ id: userId });
+      .deleteOne({ _id: userId });
     console.log('User succesfully deleted from DB');
   } catch (e) {
     console.error(e);
+  } finally {
+    await mongoclient.close();
   }
 }
 
@@ -78,6 +86,8 @@ async function checkUserExists(mongoclient, email) {
     }
   } catch (e) {
     console.error(e);
+  } finally {
+    await mongoclient.close();
   }
 }
 
