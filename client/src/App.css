@@ -3,11 +3,11 @@ body {
   color: white;
 }
 
-.Main-wrapper {
+.main-wrapper {
   text-align: center;
 }
 
-.Main-wrapper-header {
+.main-wrapper-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;

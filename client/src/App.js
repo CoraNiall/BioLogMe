@@ -1,39 +1,39 @@
-import React from 'react';
-import './App.css';
-import UserDashboard from './pages/userDashboard';
-import UserProfile from './pages/userProfileForm';
-import HomeVisualisation from './pages/homeVisualisation';
-import Register from './pages/register';
-import Login from './pages/login';
-import PublicHomePage from './pages/publicHomePage';
-import useToken from './custom-hooks/useToken';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { ProtectedRoutes } from './routes/protectedRoutes';
-import useLoggedInUser from './custom-hooks/useLoggedInUser';
+import React from "react";
+import "./App.css";
+import UserDashboard from "./pages/userDashboard";
+import UserProfile from "./pages/userProfileForm";
+import HomeVisualisation from "./pages/homeVisualisation";
+import Register from "./pages/register";
+import Login from "./pages/login";
+import PublicHomePage from "./pages/publicHomePage";
+import useToken from "./custom-hooks/useToken";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { ProtectedRoutes } from "./routes/protectedRoutes";
+import useLoggedInUser from "./custom-hooks/useLoggedInUser";
 
 function App() {
   const { token, setToken } = useToken();
   const { loggedInUser, setLoggedInUser } = useLoggedInUser();
 
   return (
-    <div className='Main-wrapper'>
+    <div className="main-wrapper">
       <Router>
         <Routes>
-          <Route path='/' element={<PublicHomePage />} />
+          <Route path="/" element={<PublicHomePage />} />
           <Route
-            path='/login'
+            path="/login"
             element={
               <Login setToken={setToken} setLoggedInUser={setLoggedInUser} />
             }
           />
-          <Route path='/register' element={<Register />} />
+          <Route path="/register" element={<Register />} />
           <Route element={<ProtectedRoutes userToken={token} children />}>
             <Route
-              path='/home'
+              path="/home"
               element={<HomeVisualisation loggedInUser={loggedInUser} />}
             />
-            <Route path='/user-dashboard' element={<UserDashboard />} />
-            <Route path='/profile-page' element={<UserProfile />} />
+            <Route path="/user-dashboard" element={<UserDashboard />} />
+            <Route path="/profile-page" element={<UserProfile />} />
           </Route>
         </Routes>
       </Router>
