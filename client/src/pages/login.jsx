@@ -76,8 +76,7 @@ export default function Login({ setToken, setLoggedInUser }) {
         </div>
       </form>
       <p className="login-link">
-        Not yet registered? Click <a href="/register">here</a> to create an
-        account
+        Not yet registered? <a href="/register">Create an account</a>
       </p>
     </div>
   );
